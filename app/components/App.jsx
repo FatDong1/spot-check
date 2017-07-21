@@ -1,5 +1,5 @@
-import '../assets/stylesheets/base.css';
-import React, { Component } from 'react';
+import '../assets/stylesheets/base.css'
+import React, { Component } from 'react'
 
 const Hello = React.createClass({
   render() {

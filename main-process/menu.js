@@ -4,126 +4,90 @@ const Menu = electron.Menu
 const app = electron.app
 
 let template = [{
-  label: '编辑',
+  label: '系统管理(D)',
   submenu: [{
-    label: '撤销',
-    accelerator: 'CmdOrCtrl+Z',
-    role: 'undo'
-  }, {
-    label: '重做',
-    accelerator: 'Shift+CmdOrCtrl+Z',
-    role: 'redo'
-  }, {
-    type: 'separator'
-  }, {
-    label: '剪切',
-    accelerator: 'CmdOrCtrl+X',
-    role: 'cut'
-  }, {
-    label: '复制',
-    accelerator: 'CmdOrCtrl+C',
-    role: 'copy'
-  }, {
-    label: '粘贴',
-    accelerator: 'CmdOrCtrl+V',
-    role: 'paste'
-  }, {
-    label: '全选',
-    accelerator: 'CmdOrCtrl+A',
-    role: 'selectall'
-  }]
-}, {
-  label: '查看',
-  submenu: [{
-    label: '重载',
-    accelerator: 'CmdOrCtrl+R',
-    click: function (item, focusedWindow) {
-      if (focusedWindow) {
-        // 重载之后, 刷新并关闭所有的次要窗体
-        if (focusedWindow.id === 1) {
-          BrowserWindow.getAllWindows().forEach(function (win) {
-            if (win.id > 1) {
-              win.close()
-            }
-          })
-        }
-        focusedWindow.reload()
-      }
-    }
-  }, {
-    label: '切换全屏',
-    accelerator: (function () {
-      if (process.platform === 'darwin') {
-        return 'Ctrl+Command+F'
-      } else {
-        return 'F11'
-      }
-    })(),
-    click: function (item, focusedWindow) {
-      if (focusedWindow) {
-        focusedWindow.setFullScreen(!focusedWindow.isFullScreen())
-      }
-    }
-  }, {
-    label: '切换开发者工具',
-    accelerator: (function () {
-      if (process.platform === 'darwin') {
-        return 'Alt+Command+I'
-      } else {
-        return 'Ctrl+Shift+I'
-      }
-    })(),
-    click: function (item, focusedWindow) {
-      if (focusedWindow) {
-        focusedWindow.toggleDevTools()
-      }
-    }
-  }, {
-    type: 'separator'
-  }, {
-    label: '应用程序菜单演示',
-    click: function (item, focusedWindow) {
-      if (focusedWindow) {
-        const options = {
-          type: 'info',
-          title: '应用程序菜单演示',
-          buttons: ['好的'],
-          message: '此演示用于 "菜单" 部分, 展示如何在应用程序菜单中创建可点击的菜单项.'
-        }
-        electron.dialog.showMessageBox(focusedWindow, options, function () {})
-      }
-    }
-  }]
-}, {
-  label: '窗口',
-  role: 'window',
-  submenu: [{
-    label: '最小化',
+    label: '权限授予',
     accelerator: 'CmdOrCtrl+M',
     role: 'minimize'
   }, {
-    label: '关闭',
+    label: '退出系统',
     accelerator: 'CmdOrCtrl+W',
     role: 'close'
+  }]
+}, {
+  label: '设备信息(O)',
+  submenu: [{
+    label: '设备导入'
   }, {
-    type: 'separator'
+    label: '设备导出',
   }, {
-    label: '重新打开窗口',
-    accelerator: 'CmdOrCtrl+Shift+T',
-    enabled: false,
-    key: 'reopenMenuItem',
-    click: function () {
-      app.emit('activate')
+    label: '设备查询',
+    accelerator: 'CmdOrCtrl+X',
+    role: 'cut'
+  },{
+    label: '设备分类',
+  }, ]
+}, {
+  label: '人员管理(N)',
+  submenu: [{
+    label: '人员查询',
+    // accelerator: 'CmdOrCtrl+R',
+    click: function (item, focusedWindow) {
+      // if (focusedWindow) {
+      //   // 重载之后, 刷新并关闭所有的次要窗体
+      //   if (focusedWindow.id === 1) {
+      //     BrowserWindow.getAllWindows().forEach(function (win) {
+      //       if (win.id > 1) {
+      //         win.close()
+      //       }
+      //     })
+      //   }
+      //   focusedWindow.reload()
+      // }
+    }
+  }, {
+    label: '人员导入',
+    // accelerator: (function () {
+    //   if (process.platform === 'darwin') {
+    //     return 'Ctrl+Command+F'
+    //   } else {
+    //     return 'F11'
+    //   }
+    // })(),
+    click: function (item, focusedWindow) {
+    //   if (focusedWindow) {
+    //     focusedWindow.setFullScreen(!focusedWindow.isFullScreen())
+    //   }
     }
   }]
 }, {
-  label: '帮助',
-  role: 'help',
+  label: '标准化管理(G)',
   submenu: [{
-    label: '学习更多',
+    label: '设备标准'
+  },{
+    label: '故障标准',
     click: function () {
-      electron.shell.openExternal('http://electron.atom.io')
+      // app.emit('activate')
     }
+  }]
+}, {
+  label: '工单管理(M)',
+  submenu: [{
+    label: '工单导入',
+    click: function () {
+      // electron.shell.openExternal('http://electron.atom.io')
+    }
+  },{
+    label: '工单导出'
+  }]
+}, {
+  label: '工作管理(A)',
+  submenu: [{
+    label: '日常点检'
+  }, {
+    label: '专业点检'
+  }, {
+    label: '精密点检'
   }]
 }]
 
@@ -225,7 +189,7 @@ if (process.platform === 'darwin') {
 
 if (process.platform === 'win32') {
   const helpMenu = template[template.length - 1].submenu
-  addUpdateMenuItems(helpMenu, 0)
+  // addUpdateMenuItems(helpMenu, 0)
 }
 
 app.on('ready', function () {
