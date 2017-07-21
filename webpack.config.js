@@ -31,21 +31,12 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.json$/,
-        loader: 'json-loader',
-      },
-      {
-        test: /\.txt$/,
-        loader: 'raw-loader',
-        include: path.resolve(__dirname, 'app/components/raw-code'),
-      },
-      {
-        test: /\.md$/,
-        loader: 'raw-loader',
-      },
-      {
         test: /\.css$/,
         loader: 'style-loader!css-loader',
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader',
       },
     ],
   },

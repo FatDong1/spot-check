@@ -1,4 +1,5 @@
 const electron = require('electron')
+const glob = require('glob')
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -10,6 +11,8 @@ const url = require('url')
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+
+const debug = /--debug/.test(process.argv[2])
 
 function createWindow () {
   // Create the browser window.
@@ -24,6 +27,12 @@ function createWindow () {
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
+  if (debug) {
+    mainWindow.webContents.openDevTools()
+    mainWindow.maximize()
+    require('devtron').install()
+  }
+
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -33,6 +42,16 @@ function createWindow () {
     mainWindow = null
   })
 }
+
+function loadDemos () {
+  var files = glob.sync(path.join(__dirname, 'main-process/**/*.js'))
+  files.forEach(function (file) {
+    require(file)
+  })
+  // autoUpdater.updateMenu()
+}
+
+loadDemos()
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
