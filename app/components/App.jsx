@@ -1,10 +1,13 @@
 import '../assets/stylesheets/base.css'
 import React, { Component } from 'react'
-
+import { Link } from 'react-router'
 const Hello = React.createClass({
   render() {
     return(
-      <h1>Hello,啦啦啦 {this.props.name}!</h1>
+      <div>
+      <h1>Hello,world!</h1>
+      <Link to="login">login</Link>
+      </div>
     )
   }
 });
