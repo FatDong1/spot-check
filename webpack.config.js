@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
-var devserverpath = 'http://localhost:8080/';
+var devserverpath = 'http://localhost:8081/';
 module.exports = {
   // entry: './js/entry.js',
   entry: [
@@ -40,6 +40,7 @@ module.exports = {
       },
     ],
   },
+
   resolve: {
     extensions: ['', '.js', '.jsx']
   },

@@ -1,4 +1,3 @@
-import '../assets/stylesheets/base.css'
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 const Hello = React.createClass({
