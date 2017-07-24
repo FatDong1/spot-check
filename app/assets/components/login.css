@@ -3,3 +3,11 @@
   font-size: 50px;
   color: red;
 }
+.login-img {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.login-box {
+  background: url('../image/background.jpg')
+}

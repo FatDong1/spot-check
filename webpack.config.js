@@ -21,7 +21,7 @@ module.exports = {
         test: /\.jsx$/,
         loaders: [
           'react-hot',
-          'babel-loader',
+          'babel-loader'
         ],
         exclude: /node_modules/,
       },
@@ -38,7 +38,14 @@ module.exports = {
         test: /\.json$/,
         loader: 'json-loader',
       },
-    ],
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'url-loader',
+        options: {
+            limit: 8192
+        }
+      }
+    ]
   },
 
   resolve: {

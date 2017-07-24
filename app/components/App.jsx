@@ -5,7 +5,8 @@ const Hello = React.createClass({
     return(
       <div>
       <h1>Hello,world!</h1>
-      <Link to="login">login</Link>
+      <Link to="login">login233344</Link>
+      {/* {this.props.children} */}
       </div>
     )
   }

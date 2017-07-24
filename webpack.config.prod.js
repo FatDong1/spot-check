@@ -7,7 +7,7 @@ module.exports = {
      path.join(__dirname, 'app/index.js')
   ],
   output: {
-    path: __dirname + '/',
+    path: __dirname + '/dist',
     filename: 'app.js',
     publicPath: '/'
   },
@@ -27,12 +27,19 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.scss$/,
-        loader: 'style-loader!css-loader!sass-loader',
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
       },
       {
         test: /\.json$/,
         loader: 'json-loader',
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]?[hash]'
+        }
       }
     ],
   },

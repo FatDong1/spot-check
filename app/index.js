@@ -8,9 +8,9 @@ import reducer from './reducers'
 import { browserHistory, Router } from 'react-router'
 import { createStore, applyMiddleware } from 'redux'
 import logger from 'redux-logger'
-import createBrowserHistory from 'history/lib/createBrowserHistory'
+import { createHashHistory } from 'history';
 
-const history = createBrowserHistory()
+const history = createHashHistory()
 
 const store = createStore(
   reducer,

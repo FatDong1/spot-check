@@ -5,7 +5,8 @@ const Login = React.createClass({
 
   render() {
     return(
-      <div>
+      <div className="login-box">
+        {/* <img src="./dist/background.jpg" alt="background" className="login-img"/> */}
         <h1 className="lal">登录啦啦啦</h1>
       </div>
     )

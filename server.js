@@ -7,7 +7,7 @@ new WebpackDevServer(webpack(config), {
     hot: true,
     historyApiFallback: true,
     inline: true,
-		historyApiFallback: true
+    historyApiFallback: true
 }).listen(8081, function(err, result) {
     if (err) {
         console.log(err);
