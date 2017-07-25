@@ -13,7 +13,7 @@ export default class Menubar extends Component {
           </li>
           <li>
             <p className="lalala">设备信息</p>
-            <p className="none">helloword</p>
+            <p className="none">hello</p>
           </li>          
         </ul>
       </div>
