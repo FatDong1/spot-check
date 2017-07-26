@@ -1,15 +1,17 @@
 import React from 'react';
-import { render } from 'react-dom';
-import App from './components/App';
+import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import routes from './routes.jsx';
 import thunk from 'redux-thunk'
 import reducer from './reducers'
-import { browserHistory, Router } from 'react-router'
 import { createStore, applyMiddleware } from 'redux'
 import logger from 'redux-logger'
 import { createHashHistory } from 'history';
+import { HashRouter, Route } from 'react-router-dom'
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+injectTapEventPlugin()
 const history = createHashHistory()
 
 const store = createStore(
@@ -17,9 +19,9 @@ const store = createStore(
   applyMiddleware(logger)
 )
 
-render(
-  <Provider  store={store}>
-    <Router history={history}>
+ReactDom.render(
+  <MuiThemeProvider  store={store}>
+    <HashRouter>
       {routes}
-    </Router>
-  </Provider>, document.getElementById('root'));
+    </HashRouter>
+  </MuiThemeProvider>, document.getElementById('root'));

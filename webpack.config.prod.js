@@ -1,4 +1,4 @@
-// var webpack = require('webpack');
+var webpack = require('webpack');
 var path = require('path');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 module.exports = {
@@ -7,7 +7,7 @@ module.exports = {
      path.join(__dirname, 'app/index.js')
   ],
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + '/',
     filename: 'app.js',
     publicPath: '/'
   },
@@ -16,7 +16,6 @@ module.exports = {
       {
         test: /\.jsx$/,
         loaders: [
-          'react-hot',
           'babel-loader',
         ],
         exclude: /node_modules/,
@@ -44,11 +43,11 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
-  eslint: {
-    configFile: '.eslintrc'
-  },
+  // eslint: {
+  //   configFile: '.eslintrc'
+  // },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()

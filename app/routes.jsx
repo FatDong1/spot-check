@@ -1,13 +1,13 @@
 import React  from 'react'
-import Route  from 'react-router'
 import App    from './components/App.jsx'
 import Login  from './components/Login.jsx'
-import Home   from './components/Home.jsx'
+import ReactDOM from 'react-dom';
+import {
+  Route
+} from 'react-router-dom';
 export default (
-  <Route>
-    <Route path="/" component={App}>
-       <Route path="/home" component={Home}/> 
-    </Route>
-    <Route  path="/login"  component={Login}/>
-  </Route>
+  <div>
+    <Route  exact path="/" component={App}/>
+    <Route  path="/login"  component={Login}/>     
+  </div>
 );

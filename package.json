@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron .",
     "debug": "electron . --debug",
-    "buildapp": "webpack --progress --colors --config --line --hot webpack.config.prod.js",
+    "buildapp": "webpack --progress --colors --config webpack.config.prod.js",
     "dev": "node server.js"
   },
   "repository": {
@@ -32,16 +32,18 @@
     "eslint-loader": "^1.0.0",
     "eslint-plugin-react": "^3.2.2",
     "file-loader": "^0.11.2",
-    "history": "^1.17.0",
+    "history": "^4.6.3",
     "html-webpack-plugin": "^1.6.1",
     "json-loader": "^0.5.4",
     "jsx-loader": "^0.12.2",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
+    "material-ui": "^0.18.7",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0",
     "react-hot-loader": "^1.1.1",
     "react-redux": "^3.1.0",
-    "react-router": "^1.0.0",
-    "react-tap-event-plugin": "^0.2.2",
+    "react-router": "^4.1.2",
+    "react-router-dom": "^4.1.2",
+    "react-tap-event-plugin": "^2.0.1",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.2.0",
@@ -53,7 +55,8 @@
     "style-loader": "^0.12.4",
     "transfer-webpack-plugin": "^0.1.4",
     "url-loader": "^0.5.9",
-    "webpack-dev-server": "1.6.4"
+    "webpack": "^2.1.0-beta.25",
+    "webpack-dev-server": "^2.1.0-beta.0"
   },
   "dependencies": {
     "glob": "^7.1.0",

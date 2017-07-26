@@ -16,7 +16,7 @@ module.exports = {
   },
   
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx$/,
         loaders: [
@@ -49,11 +49,11 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
-  eslint: {
-    configFile: '.eslintrc'
-  },
+  // eslint: {
+  //   configFile: '.eslintrc'
+  // },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()

@@ -1,0 +1,18 @@
+.menubar-box {
+  width: 100%;
+  background: #ccc;
+  list-style: none;
+  line-height: 30px;
+  display: flex;
+  justify-content: flex-start;
+}
+.menubar-box li {
+  padding: 0 10px;
+}
+.none {
+  display: none;
+}
+.lalala:hover + p {
+  display: block
+}
+

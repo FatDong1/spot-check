@@ -25,6 +25,9 @@ function createWindow () {
     slashes: true
   }))
 
+  mainWindow.setMenuBarVisibility(false);
+  mainWindow.setAutoHideMenuBar(true);
+
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
   if (debug) {
@@ -43,15 +46,15 @@ function createWindow () {
   })
 }
 
-function loadDemos () {
-  var files = glob.sync(path.join(__dirname, 'main-process/**/*.js'))
-  files.forEach(function (file) {
-    require(file)
-  })
-  // autoUpdater.updateMenu()
-}
+// function loadDemos () {
+//   var files = glob.sync(path.join(__dirname, 'main-process/**/*.js'))
+//   files.forEach(function (file) {
+//     require(file)
+//   })
+//   // autoUpdater.updateMenu()
+// }
 
-loadDemos()
+// loadDemos()
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

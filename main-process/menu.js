@@ -17,7 +17,15 @@ let template = [{
 }, {
   label: '设备信息(O)',
   submenu: [{
-    label: '设备导入'
+    label: '设备导入',
+    click: function () {
+      win = new BrowserWindow({width: 800, height: 600})
+      win.loadURL(url.format({
+        pathname: path.join(__dirname, 'index.html#/login'),
+        protocol: 'file:',
+        slashes: true
+      }))
+    }
   }, {
     label: '设备导出',
   }, {

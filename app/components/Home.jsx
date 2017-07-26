@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
-// import '../assets/components/login.css'
+import { Link, Route,  BrowserRouter as Router, Switch } from 'react-router-dom'
 
-const Home = React.createClass({
+
+export default class Home extends Component {
 
   render() {
     return(
-      <h1 className="lal">home</h1>
+      <div>
+        <p>hello world</p>
+        <ul>
+          <li><Link to="/login">login</Link></li>
+          <li><Link to="/about">about</Link></li>
+          
+        </ul>
+      </div>
     )
   }
-});
-
-export default Home;
+};
