@@ -1,18 +1,30 @@
 .menubar-box {
   width: 100%;
-  background: #ccc;
+  background: #E8E8E8;
   list-style: none;
-  line-height: 30px;
+  height: 30px;
   display: flex;
   justify-content: flex-start;
+   align-items: center; 
 }
 .menubar-box li {
   padding: 0 10px;
+   position: relative; 
+  display: inline-block;
+  height: 100%;
+  line-height: 30px;
+   /* width: 100px;  */
 }
-.none {
-  display: none;
-}
-.lalala:hover + p {
-  display: block
+ .menubar-submenu {
+      /* display: none;                */
+     position: absolute;   
+   width: 150px;
+      
+    /* top: 30px;   */
+   /* left: -40px;     */
+} 
+
+.menubar-active .menubar-label:hover > .menubar-submenu{
+   display: block; 
 }
 

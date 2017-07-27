@@ -8,3 +8,6 @@ body {
              STXihei, "华文细黑", 
              serif;
 }
+a {
+  text-decoration: none;
+}
