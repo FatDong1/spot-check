@@ -20,8 +20,10 @@ const store = createStore(
 )
 
 ReactDom.render(
-  <MuiThemeProvider  store={store}>
+  <Provider  store={store}>
+  <MuiThemeProvider>
     <HashRouter>
       {routes}
     </HashRouter>
-  </MuiThemeProvider>, document.getElementById('root'));
+  </MuiThemeProvider>
+  </Provider>, document.getElementById('root'));

@@ -13,18 +13,32 @@ export default class Menubar extends Component {
       isClick: false
     }
   }
+  // componentWillMount () {
+  //   this.setState({isClick: this.props.clickMenu})
+  //   console.log(this.state.isClick)
+  // }
   handleClick () {
-    this.setState({isClick: !this.state.isClick})
+    this.setState(function(prevState, props) {
+      return {
+        isClick: !prevState.isClick
+      };
+    });
   }
   getStyles() {
     const styles = {
         submenu: {
-            // width: '150',
+          height: 25,
+          lineHeight: '25px',
+          minHeight: '25px',
+          fontFamily: "微软雅黑",
+          fontSize: '15px',
+          marginTop: '-2px'         
         },
-        leftpart: {
-            width: '842',
-            float:'left',
-            marginRight: '10',
+        btn: {
+          fontFamily: "微软雅黑",
+          padding: '0 5px 0 2px',
+          height: 25,
+          lineHeight: '25px'
         }
         
     };
@@ -35,31 +49,65 @@ export default class Menubar extends Component {
     const style = this.getStyles()
     return(
       <div>
-        <ul className={`menubar-box ${menuClick}`} onClick={this.handleClick.bind(this)}>
+        <ul className={`menubar-box ${menuClick}`} onClick={() => this.handleClick()}>
           <li className="menubar-label">
-            <FlatButton>系统管理(S)</FlatButton>
-            <div className="menubar-submenu">
-              <Paper>
-                <Menu>
-                  <MenuItem primaryText="权限授予" />
-                  <MenuItem primaryText="退出系统" />
-                </Menu>
-              </Paper>
-            </div>
+            <FlatButton style={style.btn}>系统管理(S)</FlatButton>
+            <Paper className="menubar-submenu">
+              <Menu menuItemStyle={style.submenu}>
+                <MenuItem primaryText="权限授予" />
+                <MenuItem primaryText="退出系统" />
+              </Menu>
+            </Paper>
           </li>
           <li className="menubar-label">
-            <p>设备信息(P)</p>
-            <Paper className="menubar-submenu"  style={style.submenu}>
-              <Menu style={style.submenu}>
-                <Link to="/login">
-                  <MenuItem primaryText="导入设备" />
-                </Link>
+            <FlatButton style={style.btn}>设备信息(P)</FlatButton>
+            <Paper className="menubar-submenu" >
+              <Menu menuItemStyle={style.submenu}>
+                <MenuItem primaryText=""><Link to="/login">导入设备</Link></MenuItem>
                 <MenuItem primaryText="导出设备" />
                 <MenuItem primaryText="设备查询" />
                 <MenuItem primaryText="设备分类" />
               </Menu>
             </Paper>
-          </li>          
+          </li>  
+          <li className="menubar-label">
+            <FlatButton style={style.btn}>人员管理(R)</FlatButton>
+            <Paper className="menubar-submenu">
+              <Menu menuItemStyle={style.submenu}>
+                <MenuItem primaryText="人员导入" />
+                <MenuItem primaryText="人员导出" />
+                <MenuItem primaryText="人员查询" />
+              </Menu>
+            </Paper>
+          </li>  
+          <li className="menubar-label">
+            <FlatButton style={style.btn}>标准化管理(B)</FlatButton>
+            <Paper className="menubar-submenu">
+              <Menu menuItemStyle={style.submenu}>
+                <MenuItem primaryText="设备标准" />
+                <MenuItem primaryText="故障标准" />
+              </Menu>
+            </Paper>
+          </li>
+          <li className="menubar-label">
+            <FlatButton style={style.btn}>工单管理(G)</FlatButton>
+            <Paper className="menubar-submenu">
+              <Menu menuItemStyle={style.submenu}>
+                <MenuItem primaryText="工单导入" />
+                <MenuItem primaryText="工单导出" />
+              </Menu>
+            </Paper>
+          </li>    
+          <li className="menubar-label">
+            <FlatButton style={style.btn}>工作管理(B)</FlatButton>
+            <Paper className="menubar-submenu">
+              <Menu menuItemStyle={style.submenu}>
+                <MenuItem primaryText="日常点检" />
+                <MenuItem primaryText="专业点检" />
+                <MenuItem primaryText="精密点检" />                
+              </Menu>
+            </Paper>
+          </li>             
         </ul>
       </div>
     )

@@ -2,29 +2,26 @@
   width: 100%;
   background: #E8E8E8;
   list-style: none;
-  height: 30px;
+  height: 25px;
   display: flex;
   justify-content: flex-start;
-   align-items: center; 
+  align-items: center; 
+  font-size: 13px;
 }
 .menubar-box li {
-  padding: 0 10px;
-   position: relative; 
+  position: relative;  
   display: inline-block;
   height: 100%;
-  line-height: 30px;
-   /* width: 100px;  */
+  line-height: 25px;
+  overflow: hidden;
 }
  .menubar-submenu {
-      /* display: none;                */
+     opacity: 0;
      position: absolute;   
-   width: 150px;
-      
-    /* top: 30px;   */
-   /* left: -40px;     */
 } 
 
 .menubar-active .menubar-label:hover > .menubar-submenu{
-   display: block; 
+    display: block;  
+    opacity: 1;
 }
 

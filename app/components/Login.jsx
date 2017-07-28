@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TextField from 'material-ui/TextField'
+import { Link }   from 'react-router-dom'
 import FlatButton from 'material-ui/FlatButton';
 import '../assets/components/login.css'
 
@@ -27,7 +28,8 @@ export default class Login extends Component {
             style={{display: 'block', marginBottom: 30}}
           />
           <div className="login-btn">
-          <FlatButton label="注册" primary={true}/>
+          <FlatButton label="注册" primary={true}>
+          </FlatButton>
           <FlatButton label="登录" primary={true}/>
           </div>
         </div>

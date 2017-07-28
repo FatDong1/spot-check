@@ -1,0 +1,1 @@
+export const CLICKMENU = 'CLICKMENU'     // 取消菜单栏的点击状态
