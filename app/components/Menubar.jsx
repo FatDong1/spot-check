@@ -55,7 +55,7 @@ export default class Menubar extends Component {
             <Paper className="menubar-submenu">
               <Menu menuItemStyle={style.submenu}>
                 <MenuItem primaryText="权限授予" />
-                <MenuItem primaryText="退出系统" />
+                <MenuItem primaryText="退出系统" id="exit"/>
               </Menu>
             </Paper>
           </li>

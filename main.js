@@ -5,6 +5,7 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
+const ipc = electron.ipcMain
 const path = require('path')
 const url = require('url')
 
@@ -77,6 +78,12 @@ app.on('activate', function () {
     createWindow()
   }
 })
+
+ipc.on('test', function (event) {
+  console.log(122222)
+  mainWindow = null
+})
+
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.

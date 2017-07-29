@@ -58,5 +58,6 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ]
+  // target: 'electron'
 };
 

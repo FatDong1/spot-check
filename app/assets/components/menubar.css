@@ -13,15 +13,15 @@
   display: inline-block;
   height: 100%;
   line-height: 25px;
-  overflow: hidden;
 }
  .menubar-submenu {
-     opacity: 0;
-     position: absolute;   
+  z-index: 1;
+  opacity: 0; 
+  position: absolute;   
 } 
 
 .menubar-active .menubar-label:hover > .menubar-submenu{
-    display: block;  
-    opacity: 1;
+  display: block;  
+  opacity: 1;
 }
 
